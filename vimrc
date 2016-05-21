@@ -25,6 +25,10 @@ set splitbelow
 set splitright
 set autowrite
 set autoread
+set scrolloff=3
+set noerrorbells
+set visualbell
+
 
 " Tabs
 set autoindent
@@ -53,5 +57,21 @@ augroup line_return
         \ endif
 augroup END
 
+" Searching
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set showmatch
+set magic
 
+" Clear search
+noremap <silent> <leader>c :noh<cr>:call clearmatches()<cr>
+
+map <tab> %
+nnoremap D d$
+
+" Move to begining an end of line
+noremap H ^
+noremap L g_
 
