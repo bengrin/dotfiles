@@ -85,6 +85,34 @@ cnoremap <c-e> <end>
 
 set pastetoggle=<F3>
 
+" Plugins
+set rtp +=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
 
 
 
+" Appearance
+Plugin 'ap/vim-buftabline'
+Plugin 'mhartington/oceanic-next'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+call vundle#end()
+
+
+" Theme
+syntax enable
+set t_Co=256
+colorscheme OceanicNext
+set background=dark
+
+" Airline bar
+let g:airline_theme='oceanicnext'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_theme='base16'
+
+" Tabs
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
