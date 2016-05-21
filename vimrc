@@ -75,3 +75,16 @@ nnoremap D d$
 noremap H ^
 noremap L g_
 
+" Chane case
+nnoremap <C-u> gUiw
+inoremap <c-u> <esc>gUiwea
+
+" Command line mode
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+
+set pastetoggle=<F3>
+
+
+
+
