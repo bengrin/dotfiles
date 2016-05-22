@@ -94,6 +94,14 @@ call vundle#begin()
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets
+
+" HTML
+
+Plugin 'tpope/vim-ragtag' 
+Plugin 'mattn/emmet-vim'
+Plugin 'gregsexton/MatchTag'
+Plugin 'othree/html5.vim'
 
 " JS
 Plugin 'othree/es.next.syntax.vim'
@@ -123,6 +131,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 22
+
+let NERDTreeQuitOnOpen=0
 
 " Toggle NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
