@@ -91,6 +91,17 @@ set rtp +=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+
+" JS
+Plugin 'othree/es.next.syntax.vim'
+Plugin 'othree/yajs.vim'
+Plugin 'gavocanov/vim-js-indent'
+Plugin 'moll/vim-node'
+Plugin 'othree/javascript-libraries-syntax.vim'
+
 
 " Appearance
 Plugin 'ap/vim-buftabline'
@@ -100,6 +111,21 @@ Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
+" NERDTree
+" show hidden files in NERDTree
+let NERDTreeShowHidden=1
+
+" Open nerdTree when no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Make nerdtree look nice
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 22
+
+" Toggle NERDTree
+nmap <silent> <leader>k :NERDTreeToggle<cr>
 
 " Theme
 syntax enable
@@ -116,3 +142,13 @@ let g:airline_theme='base16'
 " Tabs
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
+
+nnoremap <silent> ,z :bp<CR>
+nnoremap <silent> ,x :bn<CR>
+
+nmap <leader>, :w<cr>
+nmap <leader>q :q<cr>
+nmap <leader>a :qa<cr>
+
+noremap H ^
+noremap L $
